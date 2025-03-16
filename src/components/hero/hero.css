@@ -168,25 +168,31 @@ video {
 	.hTitle {
 		font-size: 72px;
 	}
+	.logoContainer.mobile {
+		display: none;
+	}
+}
 
-	@media (max-width: 1280px) {
-		.bg {
-			height: 60%;
-			top: auto;
-			bottom: 0;
-		}
+@media (max-width: 1280px) {
+	.bg {
+		height: 60%;
+		top: auto;
+		bottom: 0;
+	}
 
-		.hImg {
-			height: 100%;
-		}
+	.hImg {
+		height: 100%;
+	}
 
-		.hTitle {
-			font-size: 88px;
-		}
+	.hTitle {
+		font-size: 88px;
+	}
 
-		.awards {
-			width: 60%;
-		}
+	.awards {
+		width: 60%;
+	}
+	.logoContainer.mobile {
+		display: none;
 	}
 }
 
@@ -201,9 +207,6 @@ video {
 	.logoContainer.mobile {
 		display: none;
 	}
-}
-
-@media (min-width: 769px) {
 }
 
 @media (max-width: 768px) {
