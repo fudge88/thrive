@@ -4,7 +4,7 @@ import { IoFitness } from 'react-icons/io5';
 import { MdOutlineFitnessCenter } from 'react-icons/md';
 import { IoNutrition } from 'react-icons/io5';
 import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const textVariants = {
 	initial: {
@@ -37,35 +37,57 @@ const listVariants = {
 	},
 };
 
+const serviceVariants = {
+	initial: {
+		x: 100,
+		opacity: 0,
+	},
+	animate: {
+		x: 0,
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
 const services = [
 	{
 		id: 1,
 		title: 'Peak Performance Training ',
 		subTitle: 'Unlock Your Full Potential',
 		description:
-			'You don’t just train—you optimize. Our bespoke one-on-one training programs are designed to elevate strength, endurance, and agility, ensuring you perform at your absolute best—whether in the boardroom or on the golf course.',
+			'Optimize. Elevate. Perform. Our bespoke training enhances strength, endurance, and agility, ensuring you excel—whether in the boardroom or on the golf course.',
 		icon: <IoFitness />,
+		img: './watch.png',
 	},
 	{
 		id: 2,
 		title: 'Precision Recovery ',
 		subTitle: 'Rebuild Stronger, Faster',
 		description:
-			'Injury and fatigue shouldn’t slow you down. Our advanced rehabilitation techniques help high-performers like you recover efficiently, rebuild resilience, and prevent setbacks, so you stay in control of your health and performance.',
+			'Recover. Rebuild. Dominate. Our advanced rehabilitation ensures swift recovery, resilience, and peak performance—keeping you in control.',
 		icon: <MdOutlineFitnessCenter />,
+		img: './dumbell.png',
 	},
 	{
 		id: 3,
 		title: 'Executive Nutrition ',
 		subTitle: 'Fuel Success, Sustain Excellence',
 		description:
-			'Elite performance starts with the right fuel. Our tailored nutrition plans are designed to enhance cognitive clarity, energy levels, and longevity, keeping you sharp, focused, and ready to conquer every challenge.',
+			'Fuel for Success. Precision nutrition enhances clarity, energy, and longevity—keeping you sharp, focused, and unstoppable.',
 		icon: <IoNutrition />,
+		img: './apple.png',
 	},
 ];
 const Services = () => {
+	const [currentServiceId, setCurrentServiceId] = useState(1);
 	const ref = useRef();
 	const isInView = useInView(ref, { margin: '-200px' });
+
+	const selectedService = services.find(
+		(service) => service.id === currentServiceId
+	);
 	return (
 		<div className="services" ref={ref}>
 			<div className="sSection left">
@@ -84,7 +106,8 @@ const Services = () => {
 						<motion.div
 							variants={listVariants}
 							className="service"
-							key={service.id}>
+							key={service.id}
+							onClick={() => setCurrentServiceId(service.id)}>
 							<div className="serviceIcon">{service.icon}</div>
 							<div className="serviceInfo">
 								<h2>{service.title}</h2>
@@ -94,11 +117,28 @@ const Services = () => {
 					))}
 				</motion.div>
 				<div className="counterList">
-					<Counter from={0} to={275} text="Transformations in Progress" />
+					<Counter from={0} to={275} text="Success stories" />
 					<Counter from={0} to={132} text="Happy Clients" />
 				</div>
 			</div>
-			<div className="sService right"></div>
+			<div className="sSection right">
+				{selectedService && (
+					<motion.div
+						className="serviceDetails"
+						variants={serviceVariants}
+						animate={isInView ? 'animate' : 'initial'}>
+						<img
+							src={selectedService.img}
+							alt={selectedService.title}
+							className="serviceImage"
+						/>
+
+						<h2>{selectedService.subTitle}</h2>
+						<p>{selectedService.description}</p>
+						<button className="serviceBtn">Learn More</button>
+					</motion.div>
+				)}
+			</div>
 		</div>
 	);
 };
