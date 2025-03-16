@@ -10,6 +10,10 @@ const Hero = () => {
 			<div className="hero">
 				<div className="overlay"></div>
 				<section className="hSection left">
+					<div className="logoContainer mobile">
+						<img src="/thrive.png"></img>
+						<span>Around The World</span>
+					</div>
 					<h1 className="hTitle">
 						Personal Training
 						<br />

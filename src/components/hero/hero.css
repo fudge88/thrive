@@ -19,7 +19,6 @@
 	margin-top: 50px;
 	font-size: 90px;
 	text-transform: uppercase;
-	min-height: 60vh;
 }
 .typeAnimation {
 	color: #599e79;
@@ -164,4 +163,90 @@ video {
 	height: 100%;
 	background-color: rgba(255, 255, 255, 0.543);
 	z-index: -1;
+}
+@media (max-width: 1536px) {
+	.hTitle {
+		font-size: 72px;
+	}
+
+	@media (max-width: 1280px) {
+		.bg {
+			height: 60%;
+			top: auto;
+			bottom: 0;
+		}
+
+		.hImg {
+			height: 100%;
+		}
+
+		.hTitle {
+			font-size: 88px;
+		}
+
+		.awards {
+			width: 60%;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.bg {
+		height: 50%;
+	}
+
+	.hTitle {
+		font-size: 72px;
+	}
+	.logoContainer.mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 769px) {
+}
+
+@media (max-width: 768px) {
+	.hero {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hSection {
+		width: 100%;
+	}
+
+	.hSection.left {
+		width: 100%;
+		align-items: center;
+		text-align: center;
+		gap: 36px;
+	}
+
+	.hTitle {
+		font-size: 48px;
+	}
+
+	.awards {
+		width: 100%;
+	}
+
+	.awardsList {
+		justify-content: center;
+	}
+
+	.hSection.right {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.follow,
+	.logoContainer,
+	.certificate {
+		display: none;
+	}
+	.logoContainer.mobile {
+		display: flex;
+		align-items: center;
+	}
 }
