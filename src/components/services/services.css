@@ -1,44 +1,128 @@
-.servicesContainer {
+.services {
+	height: 100%;
+	overflow: hidden;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	gap: 20px;
-	width: 100%;
 }
 
-.servicesBtn {
-	width: 100%;
-	height: 200px;
-	border: none;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 600;
-	cursor: pointer;
+.sSection {
+	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.sTitle {
+	font-size: 88px;
+}
+.subTitle {
+	margin-bottom: 24px;
+}
+
+.serviceList {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.service {
+	width: 50%;
+	padding: 30px;
+	border-radius: 20px;
+	background-color: #599e79;
+	display: flex;
 	align-items: center;
-	position: relative;
-	text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
-	transition: transform 0.3s ease;
+	gap: 16px;
+	cursor: pointer;
 }
 
-.servicesBtn:hover {
-	transform: scale(1.05);
+.serviceIcon {
+	color: #ffffff;
+	font-size: 100px;
+	width: 24px;
+	height: 24px;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #025656;
+	padding: 2px;
 }
 
-.fitness {
-	background-image: url('./fitness.jpg');
+.serviceInfo {
+	flex: 1;
 }
 
-.rehab {
-	background-image: url('./rehab.jpg');
+.serviceInfo h2 {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 8px;
 }
 
-.nutrition {
-	background-image: url('./nutrition.jpg');
+.serviceInfo h3 {
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.counterList {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 24px;
+}
+
+.counter {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.counter h1 {
+	font-size: 48px;
+	color: #dd4c62;
+}
+
+.counter p {
+	font-size: 13px;
+	width: 120px;
+}
+
+@media (max-width: 1536px) {
+	.service,
+	.counterList {
+		width: 70%;
+	}
+}
+
+@media (max-width: 1280px) {
+	.sTitle {
+		font-size: 68px;
+		line-height: 80px;
+	}
+
+	.service {
+		width: 100%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.service,
+	.counterList {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.services {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.sSection {
+		width: 100%;
+	}
+
+	.sSection.right {
+		display: none;
+	}
 }
