@@ -12,6 +12,8 @@ body {
 	background-color: #ffffff !important;
 	color: #0b132b;
 	font-family: 'Oswald', sans-serif;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 a {
