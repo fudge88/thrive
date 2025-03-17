@@ -89,55 +89,51 @@ const Services = () => {
 		(service) => service.id === currentServiceId
 	);
 	return (
-		<div className="services" ref={ref}>
-			<div className="sSection left">
-				<motion.h1
-					variants={textVariants}
-					animate={isInView ? 'animate' : 'initial'}
-					className="sTitle">
-					Precision. Performance. Power.
-				</motion.h1>
-				<h2 className="subTitle">Elite Training & Recovery</h2>
-				<motion.div
-					variants={listVariants}
-					animate={isInView ? 'animate' : 'initial'}
-					className="serviceList">
-					{services.map((service) => (
-						<motion.div
-							variants={listVariants}
-							className="service"
-							key={service.id}
-							onClick={() => setCurrentServiceId(service.id)}>
-							<div className="serviceIcon">{service.icon}</div>
-							<div className="serviceInfo">
-								<h2>{service.title}</h2>
-								<h3>{service.subTitle}</h3>
-							</div>
-						</motion.div>
-					))}
-				</motion.div>
-				<div className="counterList">
-					<Counter from={0} to={275} text="Success stories" />
-					<Counter from={0} to={132} text="Happy Clients" />
-				</div>
-			</div>
-			<div className="sSection right">
-				{selectedService && (
+		<div className="servicesContainer">
+			<motion.h1
+				variants={textVariants}
+				animate={isInView ? 'animate' : 'initial'}
+				className="sTitle">
+				Precision. Performance. Power.
+			</motion.h1>
+			<div className="services" ref={ref}>
+				<div className="sSection left">
+					<h2 className="subTitle">Elite Training & Recovery</h2>
 					<motion.div
-						className="serviceDetails"
-						variants={serviceVariants}
-						animate={isInView ? 'animate' : 'initial'}>
-						<img
-							src={selectedService.img}
-							alt={selectedService.title}
-							className="serviceImage"
-						/>
-
-						<h2>{selectedService.subTitle}</h2>
-						<p>{selectedService.description}</p>
-						<button className="serviceBtn">Learn More</button>
+						variants={listVariants}
+						animate={isInView ? 'animate' : 'initial'}
+						className="serviceList">
+						{services.map((service) => (
+							<motion.div
+								variants={listVariants}
+								className="service"
+								key={service.id}
+								onClick={() => setCurrentServiceId(service.id)}>
+								<div className="serviceIcon">{service.icon}</div>
+								<div className="serviceInfo">
+									<h2>{service.title}</h2>
+									<h3>{service.subTitle}</h3>
+								</div>
+							</motion.div>
+						))}
 					</motion.div>
-				)}
+					<div className="counterList">
+						<Counter from={0} to={275} text="Success Stories" />
+						<Counter from={0} to={132} text="Happy Clients" />
+					</div>
+				</div>
+				<div className="sSection right">
+					{selectedService && (
+						<motion.div
+							className="serviceDetails"
+							variants={serviceVariants}
+							animate={isInView ? 'animate' : 'initial'}>
+							<h2>{selectedService.subTitle}</h2>
+							<p>{selectedService.description}</p>
+							<button className="serviceBtn">Learn More</button>
+						</motion.div>
+					)}
+				</div>
 			</div>
 		</div>
 	);

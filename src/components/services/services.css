@@ -1,3 +1,9 @@
+.servicesContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
 .services {
 	height: 100%;
 	overflow: hidden;
@@ -13,6 +19,9 @@
 
 .sTitle {
 	font-size: 88px;
+	width: 100%;
+	align-items: center; /* Allows free-flow effect */
+	margin-top: 100px;
 }
 .subTitle {
 	margin-bottom: 24px;
@@ -32,8 +41,8 @@ h3 {
 .service {
 	width: 50%;
 	padding: 30px;
+	background-color: #ffffff8a;
 	border-radius: 20px;
-	background-color: #599e79;
 	display: flex;
 	align-items: center;
 	gap: 16px;
@@ -43,14 +52,14 @@ h3 {
 .serviceIcon {
 	color: #ffffff;
 	font-size: 100px;
-	width: 24px;
-	height: 24px;
+	width: 35px;
+	height: 35px;
 	border-radius: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #025656;
-	padding: 2px;
+	padding: 5px;
 }
 
 .serviceInfo {
@@ -90,6 +99,7 @@ h3 {
 .counter p {
 	font-size: 13px;
 	width: 120px;
+	color: #ffffff;
 }
 
 .serviceDetails {
@@ -119,6 +129,8 @@ h3 {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* test */
+
 @media (max-width: 1536px) {
 	.service,
 	.counterList {
@@ -142,12 +154,18 @@ h3 {
 	.counterList {
 		width: 100%;
 	}
+	.serviceDetails {
+		margin-top: 200px;
+	}
 }
 
 @media (max-width: 768px) {
 	.services {
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
+	}
+	.sTitle {
+		margin-top: 80px;
 	}
 
 	.sSection {
