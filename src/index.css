@@ -11,11 +11,16 @@ html {
 body {
 	background-color: #ffffff !important;
 	color: #0b132b;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
 	overflow-x: hidden;
 }
-
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Oswald', sans-serif;
+}
 a {
 	text-decoration: none;
 	color: #ffffff;
