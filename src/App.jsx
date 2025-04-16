@@ -1,10 +1,12 @@
-import Contact from './components/contact/Contact';
-import Hero from './components/hero/hero';
-import Services from './components/services/Services';
+import Contact from "./components/contact/Contact";
+import Hero from "./components/hero/hero";
+import Navbar from "./components/navbar/Navbar";
+import Services from "./components/services/Services";
 
 const App = () => {
 	return (
 		<div className="container">
+			<Navbar />
 			<section id="#hero">
 				<Hero />
 			</section>
